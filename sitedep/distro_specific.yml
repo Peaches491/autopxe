@@ -1,0 +1,4 @@
+ubuntu:
+  init_files:
+    - "install/initrd.gz"
+    - "install/vmlinuz"
