@@ -2,5 +2,6 @@
 dirs:
   tftp: /tftpboot
   plugins: /tftpboot/er/plugins/
+  shares: /tftpboot/er/shares/
   isos: /media/Storage/ISOs
   mountpoint: /media/autopxe/

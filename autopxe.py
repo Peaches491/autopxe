@@ -40,9 +40,18 @@ def extract_files(file_parser):
 
     # Copy init files
     for init_file in file_parser.get_init_files():
-        filepath = SiteDep["dirs"]["mountpoint"] + "/"+ init_file
+        filepath = _mountpoint + "/"+ init_file
         utils.dryrun(os.system, "cp --no-clobber %s %s" % tuple(map(os.path.normpath, (filepath, dest))))
 
+def copy_extras(file_parser):
+    # Create destination directory
+    dest = SiteDep["dirs"]["shares"] + "/" + file_parser.get_shares_directory()
+    utils.dryrun(os.system, "mkdir -p \"%s\"" % os.path.normpath(dest))
+
+    # Copy share files
+    for share_file in file_parser.get_share_files():
+        filepath = _mountpoint + "/"+ share_file
+        utils.dryrun(os.system, "cp --no-clobber %s %s" % tuple(map(os.path.normpath, (filepath, dest))))
 
 def unmount_iso():
     os.system("umount %s" % _mountpoint)
@@ -63,7 +72,8 @@ def main():
 
     mount_iso(iso_file)
     extract_files(file_parser)
-    unmount_iso()
+    copy_extras(file_parser)
+    # unmount_iso()
 
 if __name__ == "__main__":
     main()

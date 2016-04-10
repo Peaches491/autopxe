@@ -1,4 +1,16 @@
+clonezilla:
+  init_files:
+    - "live/initrd.img"
+    - "live/vmlinuz"
+  share_files:
+    - "live/filesystem.packages"
+    - "live/filesystem.squashfs"
+
 ubuntu:
   init_files:
     - "install/initrd.gz"
     - "install/vmlinuz"
+  share_files:
+    - "install/filesystem.manifest"
+    - "install/filesystem.size"
+    - "install/filesystem.squashfs"

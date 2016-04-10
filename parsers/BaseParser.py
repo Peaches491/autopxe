@@ -29,10 +29,26 @@ class BaseParser():
     def get_init_files(self):
         return SiteDep[self.get_distro()]["init_files"]
 
+    def get_share_files(self):
+        return SiteDep[self.get_distro()]["share_files"]
+
     def get_init_directory(self, absolute=False):
         path = ""
         if absolute:
             path += SiteDep["plugins"]
+
+        tags = self.parse()
+        distro = self.get_distro()
+        path += tags[self.DISTRO] + "/"
+        path += tags[self.VERSION] + "/"
+        path += tags[self.TYPE] + "/"
+        path += tags[self.ARCH] + "/"
+        return path
+
+    def get_shares_directory(self, absolute=False):
+        path = ""
+        if absolute:
+            path += SiteDep["shares"]
 
         tags = self.parse()
         distro = self.get_distro()
