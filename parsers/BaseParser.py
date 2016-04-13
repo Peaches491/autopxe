@@ -5,10 +5,10 @@ from sitedep import *
 import os
 
 class BaseParser():
-    DISTRO = "distro"
+    DISTRO =  "distro"
     VERSION = "version"
-    TYPE = "type"
-    ARCH = "arch"
+    TYPE =    "type"
+    ARCH =    "arch"
 
     def __init__(self, filename):
         self._isopath = filename

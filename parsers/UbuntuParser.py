@@ -15,7 +15,7 @@ class UbuntuParser(BaseParser):
         tags[self.DISTRO] = self.get_distro()
         fields.pop() # Remove the distro
 
-        if len(fields) >= 3:
+        if len(fields) >= 4:
             tags[self.VERSION] = "-".join([fields.pop(), fields.pop()])
         else:
             tags[self.VERSION] = fields.pop()
