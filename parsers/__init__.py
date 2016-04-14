@@ -1,6 +1,6 @@
-from BaseParser import *
-from ClonezillaParser import *
-from UbuntuParser import *
+from . BaseParser import *
+from . ClonezillaParser import *
+from . UbuntuParser import *
 
 _distro_map = dict()
 _distro_map["ubuntu"] = lambda x: UbuntuParser(x)
