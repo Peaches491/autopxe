@@ -27,7 +27,7 @@ tag_list = [
 class TestParsers(unittest.TestCase):
 
     def test_test(self):
-        for path, given_tags in ubuntu_test_paths.iteritems():
+        for path, given_tags in ubuntu_test_paths.items():
             for tag in tag_list:
                 file_parser = parsers.select_parser(path)
                 tags = file_parser.parse()

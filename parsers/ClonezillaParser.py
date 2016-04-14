@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-from BaseParser import BaseParser
+from .BaseParser import BaseParser
 
 class ClonezillaParser(BaseParser):
 
