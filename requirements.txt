@@ -1,2 +1,5 @@
+nose-machineout2==0.5.1
 nose2==0.6.4
+PyYAML==3.11
 six==1.10.0
+vim-bridge==0.5
